@@ -6,4 +6,8 @@ import axios from '../axios';// axios de goi den sever nodejs ben phia khach
 const handleLoginAPI =(userEmail,userPassword) =>{
      return axios.post('http://localhost:3000/api/login',{ email:userEmail, password:userPassword });
 }
-export {handleLoginAPI};
+
+const getAllUsers = (InputId) =>{
+     return axios.get(`http://localhost:3000/api/get-all-user?id=${InputId}`)
+}
+export {handleLoginAPI,getAllUsers};
