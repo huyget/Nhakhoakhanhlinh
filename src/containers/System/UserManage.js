@@ -1,29 +1,61 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import  {getAllUsers} from '../../services/userService';
+import  {getAllUsers, createNewuserserver} from '../../services/userService';
 import './userManage.scss'
+import ModalUser from './ModalUser';
+import { isOptionalChain } from 'typescript';
 class UserManage extends Component {
 
         constructor(props){
             super(props);
             this.state = {
-                arruser:[]// luu mot gia tri Component
+                arruser:[],// luu mot gia tri Component,
+                isOpenModalUser : false,
+            
             }
         }
     // muon khoi tao mot doi tuong can ham khoi tao
 //goi API đoạn code dươi là gọi API
    async componentDidMount() {
-    let response = await getAllUsers('ALL');
-    if(response && response.errCode === 0){
-        this.setState({arruser : response.user},()=>{
+        await this.getAllUserFromReact();
+    }
 
+    getAllUserFromReact =async() =>{
+        let response = await getAllUsers('ALL');
+        if(response && response.errCode === 0){
+        this.setState({arruser : response.user},()=>{
         })
 
     }
     }
-
-
+    handleAddnewuser = () =>{
+       this.setState({
+        isOpenModalUser : true
+       })
+    }
+    ToggleModalUser = ()=>{
+        this.setState({
+            isOpenModalUser : !this.state.isOpenModalUser,
+        })
+    }
+    createNewuser = async(data)=>{
+        try {
+           let response = await createNewuserserver(data);
+           if( response && response.errcode !== 0 ){
+            alert(response.errmessage)
+           }
+           else{
+            await this.getAllUserFromReact()
+            this.setState({
+                isOpenModalUser : false
+            })
+           }
+            
+        } catch (e) {
+            console.log(e)
+        }
+    }
     render() {
         console.log('check',this.state)
         let arruser = this.state.arruser;
@@ -31,8 +63,23 @@ class UserManage extends Component {
         return (
             <div className="user-container">
                 <div className='title text-center'>Khanh Linh DENTAL Manage User</div>
+                <ModalUser
+                isOpen = {this.state.isOpenModalUser}
+                toggleModalUser= {this.ToggleModalUser}
+                createNewuser = {this.createNewuser}
+                
+                >
+                    
+                </ModalUser>
+                <div className='mx-1'>
+                    <button 
+                    className='btn btn-primary px-3'
+                    onClick={() => this.handleAddnewuser()}>
+                    <i className ="fas fa-plus"></i>Add new user</button>
+                </div>
                 <div className='user-table mt-3 mx-2'>
                     <table>
+                        <tbody>
                         <tr>
                             <th>Email</th>
                             <th>Fist Name</th>
@@ -40,6 +87,8 @@ class UserManage extends Component {
                             <th>Address</th>
                             <th>Action</th>
                         </tr>
+                        </tbody>
+                        
                         
                         {
                             arruser && arruser.map((item,index)=>{
@@ -52,8 +101,8 @@ class UserManage extends Component {
                                     <td>{item.address}</td>
                                     <td>
                                         {/* dung https://fontawesome.com/ phiên bản 5.15.4 */}
-                                        <button className='btn-edit'><i class="fas fa-pencil-alt"></i></button> 
-                                        <button className='btn-delete'><i class="fas fa-trash-alt"></i></button>
+                                        <button className='btn-edit'><i className="fas fa-pencil-alt"></i></button> 
+                                        <button className='btn-delete'><i className="fas fa-trash-alt"></i></button>
                                     </td>
                                     </tr>
                                 )

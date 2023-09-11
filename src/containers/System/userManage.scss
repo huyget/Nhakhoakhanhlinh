@@ -39,3 +39,29 @@ table {
     background-color: transparent !important;
     }
   }
+
+  .Modal-user-container{
+    display: flex;
+    flex-grow: 1;
+    .modal-header{
+      flex-grow: 1;
+      .modal-title{
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+      }
+    }
+
+    .Modal-container{
+      display: flex;
+      gap: 10px;
+      padding-bottom: 20px;
+
+      .input-container{
+        flex-direction: column;
+        display: flex;
+        flex-grow: 1;
+      }
+    }
+    
+  }

@@ -11,4 +11,9 @@ const getAllUsers = (InputId) =>{
      //template string
      return axios.get(`http://localhost:3000/api/get-all-user?id=${InputId}`)
 }
-export {handleLoginAPI,getAllUsers};
+
+const createNewuserserver = (data) =>{
+     console.log('check data from server', data)
+     return axios.post('http://localhost:3000/api/create-new-user', data)
+}
+export {handleLoginAPI,getAllUsers,createNewuserserver};
