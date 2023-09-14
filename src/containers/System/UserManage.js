@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import  {getAllUsers, createNewuserserver} from '../../services/userService';
+import  {getAllUsers, createNewuserserver,DeletUserServer} from '../../services/userService';
 import './userManage.scss'
 import ModalUser from './ModalUser';
 import { isOptionalChain } from 'typescript';
+import { dateFilter } from 'react-bootstrap-table2-filter';
+import { emitter } from '../../utils/emitter';
 class UserManage extends Component {
 
         constructor(props){
@@ -48,13 +50,29 @@ class UserManage extends Component {
            else{
             await this.getAllUserFromReact()
             this.setState({
-                isOpenModalUser : false
+                isOpenModalUser  : false
             })
+            emitter.emit('EVENT_CLEAR_MODAL_DATA')
            }
             
         } catch (e) {
             console.log(e)
         }
+    }
+
+    handleDeleteUser = async(user) =>{
+        console.log('in ra user trog delete', user)
+        try {
+            let response = await DeletUserServer(user.id);
+            if (response && response.errcode === 0){
+                await this.getAllUserFromReact()
+            } else {
+                alert(response.errMessage)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+        
     }
     render() {
         console.log('check',this.state)
@@ -102,7 +120,7 @@ class UserManage extends Component {
                                     <td>
                                         {/* dung https://fontawesome.com/ phiên bản 5.15.4 */}
                                         <button className='btn-edit'><i className="fas fa-pencil-alt"></i></button> 
-                                        <button className='btn-delete'><i className="fas fa-trash-alt"></i></button>
+                                        <button className='btn-delete' onClick={()=>{ this.handleDeleteUser(item)}}><i className="fas fa-trash-alt"></i></button>
                                     </td>
                                     </tr>
                                 )

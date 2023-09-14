@@ -16,4 +16,13 @@ const createNewuserserver = (data) =>{
      console.log('check data from server', data)
      return axios.post('http://localhost:3000/api/create-new-user', data)
 }
-export {handleLoginAPI,getAllUsers,createNewuserserver};
+const DeletUserServer = (userId) =>{
+     console.log('check deleteUserServer', userId)
+     // code cau lenh xoa user theo dia chi id tu thu vien axios
+     return axios.delete("http://localhost:3000/api/delete-user",{
+          data:{
+               id : userId
+          }
+     });
+}
+export {handleLoginAPI,getAllUsers,createNewuserserver,DeletUserServer};

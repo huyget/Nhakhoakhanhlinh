@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Alert } from 'reactstrap';
-
+import { emitter } from '../../utils/emitter';
 
 class ModalUser extends Component {
 
@@ -16,7 +16,24 @@ class ModalUser extends Component {
           lastName:'',
           address:''
             
-        };
+        }
+        
+        this.listenToEmitter();
+    }
+
+    listenToEmitter(){
+        emitter.on('EVENT_CLEAR_MODAL_DATA',()=>{
+
+            //reset state tra ve bien rong
+            this.setState({
+                email:'',
+                password:'',
+                firstName:'',
+                lastName:'',
+                address:''
+            
+            })
+        })
     }
 
     componentDidMount() {
@@ -48,7 +65,7 @@ class ModalUser extends Component {
 
 
     // checkvalideInput la kiem tra xem da nhap du chua hoac nhap duung khong
-    checkValideInput =() =>{
+    checkValidateInput =() =>{
         let isValid =true;
         let arrinput = ['email', 'password', 'firstName', 'lastName', 'address'];
         for (let i = 0; i < arrinput.length; i++) {
@@ -63,7 +80,7 @@ class ModalUser extends Component {
     }
 
     handleAddNewUser = ()=>{
-       let isValid = this.checkValideInput();
+       let isValid = this.checkValidateInput();
        if(isValid === true){
         this.props.createNewuser(this.state)
        }
