@@ -25,4 +25,9 @@ const DeletUserServer = (userId) =>{
           }
      });
 }
-export {handleLoginAPI,getAllUsers,createNewuserserver,DeletUserServer};
+const EditUserServer = (data) =>{
+     console.log( 'Edit User Server ', data);
+     return axios.put('http://localhost:3000/api/edit-user', data)
+
+}
+export {handleLoginAPI,getAllUsers,createNewuserserver,DeletUserServer,EditUserServer};
