@@ -1,4 +1,25 @@
 {
+    "homeheader":{
+        "speciality" : "chuyên Khoa",
+        "searchdoctor":"Tìm bác sĩ theo chuyên khoa",
+        "health-facility": "Cơ sở y tế",
+        "select-room":"Chọn bệnh viện phòng khám",
+        "doctor":"Bác sĩ",
+        "select-doctor":"Chọn bác sĩ giỏi",
+        "fee":"Gói khám",
+        "check-health":"khám sức khỏe tổng quát",
+        "support":"Hổ trợ"
+    },
+    "banner":{
+        "title1":"NỀN TẢNG Y TẾ",
+        "title2":"CHĂM SÓC RĂNG MIỆNG TOÀN DIỆN",
+        "text-child1":"Khám Chuyên Khoa",
+        "text-child2":"Khám từ xa",
+        "text-child3":"Khám tổng quát",
+        "text-child4":"xét nghiệm y học",
+        "text-child5":"Sức Khỏe tinh thần",
+        "text-child6":"khám nha khoa"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
