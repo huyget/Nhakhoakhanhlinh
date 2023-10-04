@@ -17,87 +17,89 @@ class HomeHeader extends Component {
     return (
       <React.Fragment>
         <div className="home-header-container">
-          <div className="home-header-content">
-            <div className="left-content">
-              <i className="fas fa-bars header-icon"></i>
-              <img src={logo}></img>
-            </div>
-            <div className="center-content">
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="homeheader.speciality" />
-                  </b>
+          <div className="home-heard-tabar">
+            <div className="home-header-content">
+              <div className="left-content">
+                <i className="fas fa-bars header-icon"></i>
+                <img src={logo}></img>
+              </div>
+              <div className="center-content">
+                <div className="child-content">
+                  <div>
+                    <b>
+                      <FormattedMessage id="homeheader.speciality" />
+                    </b>
+                  </div>
+                  <div className="sub-title">
+                    <FormattedMessage id="homeheader.searchdoctor" />
+                  </div>
                 </div>
-                <div className="sub-title">
-                  <FormattedMessage id="homeheader.searchdoctor" />
+                <div className="child-content">
+                  <div>
+                    <b>
+                      <FormattedMessage id="homeheader.health-facility" />
+                    </b>
+                  </div>
+                  <div className="sub-title">
+                    <FormattedMessage id="homeheader.select-room" />
+                  </div>
+                </div>
+                <div className="child-content">
+                  <div>
+                    <b>
+                      <FormattedMessage id="homeheader.doctor" />
+                    </b>
+                  </div>
+                  <div className="sub-title">
+                    <FormattedMessage id="homeheader.select-doctor" />
+                  </div>
+                </div>
+                <div className="child-content">
+                  <div>
+                    <b>
+                      <FormattedMessage id="homeheader.fee" />
+                    </b>
+                  </div>
+                  <div className="sub-title">
+                    <FormattedMessage id="homeheader.check-health" />
+                  </div>
                 </div>
               </div>
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="homeheader.health-facility" />
-                  </b>
+              <div className="right-content">
+                <div className="support">
+                  <i className="fas fa-question-circle"></i>
+                  <FormattedMessage id="homeheader.support" />
                 </div>
-                <div className="sub-title">
-                  <FormattedMessage id="homeheader.select-room" />
-                </div>
-              </div>
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="homeheader.doctor" />
-                  </b>
-                </div>
-                <div className="sub-title">
-                  <FormattedMessage id="homeheader.select-doctor" />
-                </div>
-              </div>
-              <div className="child-content">
-                <div>
-                  <b>
-                    <FormattedMessage id="homeheader.fee" />
-                  </b>
-                </div>
-                <div className="sub-title">
-                  <FormattedMessage id="homeheader.check-health" />
-                </div>
-              </div>
-            </div>
-            <div className="right-content">
-              <div className="support">
-                <i className="fas fa-question-circle"></i>
-                <FormattedMessage id="homeheader.support" />
-              </div>
-              <div
-                className={
-                  languagedata === LANGUAGES.VI
-                    ? "language-vi active"
-                    : "language-vi"
-                }
-              >
-                <span
-                  onClick={() => {
-                    this.changeLanguage(LANGUAGES.VI);
-                  }}
+                <div
+                  className={
+                    languagedata === LANGUAGES.VI
+                      ? "language-vi active"
+                      : "language-vi"
+                  }
                 >
-                  VN
-                </span>
-              </div>
-              <div
-                className={
-                  languagedata === LANGUAGES.EN
-                    ? "language-en active"
-                    : "language-en"
-                }
-              >
-                <span
-                  onClick={() => {
-                    this.changeLanguage(LANGUAGES.EN);
-                  }}
+                  <span
+                    onClick={() => {
+                      this.changeLanguage(LANGUAGES.VI);
+                    }}
+                  >
+                    VN
+                  </span>
+                </div>
+                <div
+                  className={
+                    languagedata === LANGUAGES.EN
+                      ? "language-en active"
+                      : "language-en"
+                  }
                 >
-                  EN
-                </span>
+                  <span
+                    onClick={() => {
+                      this.changeLanguage(LANGUAGES.EN);
+                    }}
+                  >
+                    EN
+                  </span>
+                </div>
               </div>
             </div>
           </div>

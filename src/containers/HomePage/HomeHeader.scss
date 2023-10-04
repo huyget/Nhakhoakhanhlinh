@@ -1,117 +1,145 @@
 .home-header-container {
     height: 100px;
-    width: 1200px;
+    width: 100%;
     margin: auto;
-    .home-header-content {
-        min-width: 1200px;
-        height: 100px;
-        display: flex;
-        //box-shadow: 0 1px 10px;
-        position: fixed;
-        .left-content {
-            flex-grow: 1;
-            width: 20%;
+    .home-heard-tabar {
             display: flex;
-            align-items: center;
-            // width: 25%;
-            // //border: 1px solid green;
-            // display: flex;
-            .header-icon {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                width: 25%;
-                font-size: 30px;
-                color: gray;
-                cursor: pointer;
-            }
-            img{
-                width: auto;
-                height: 70%;
-            }
-            // .header-logo {
-            //     //background: url('../../assets/images/logo2-1.png') center center no-repeat;
-            //     //background-size:auto 100%;
-            //     //width: 50%;
-            //     background-size: 85% auto;//dieu chinh kich thuoc background vua voi khung hinh
-            //     height: 100%;
-            //     width: 75%;
-            // }
-            .header-text {
-                width: 25%;
-            }
-        }
-        .center-content {
-            width: 60%;
-            //border: 1px solid orange;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            .child-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                cursor: pointer;
-                &:hover {
-                        opacity: 0.7;
-                    }
-            }
-            .sub-title {
-                font-weight: 400;
-                font-size: 12px;
-                
-                
-            }
-        }
-        .right-content {
-            width: 20%;
-            //border: 1px solid grey;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            height: auto;
+            width: 100%;
+            justify-content: center;
+            background: white;
+            position: fixed;
+            z-index: 5000;
+            .home-header-content {
+                    min-width: 1200px;
+                    height: 100px;
+                    display: flex;
+                    //box-shadow: 0 1px 10px;
+                    
             
-            .support{
-                padding-right: 50px;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                i {
-                        font-size: 15px;
-                        margin-right: 5px;
+                    .left-content {
+                        flex-grow: 1;
+                        width: 20%;
+                        display: flex;
+                        align-items: center;
+            
+                        // width: 25%;
+                        // //border: 1px solid green;
+                        // display: flex;
+                        .header-icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            width: 25%;
+                            font-size: 30px;
+                            color: gray;
+                            cursor: pointer;
+                        }
+            
+                        img {
+                            width: auto;
+                            height: 70%;
+                        }
+            
+                        // .header-logo {
+                        //     //background: url('../../assets/images/logo2-1.png') center center no-repeat;
+                        //     //background-size:auto 100%;
+                        //     //width: 50%;
+                        //     background-size: 85% auto;//dieu chinh kich thuoc background vua voi khung hinh
+                        //     height: 100%;
+                        //     width: 75%;
+                        // }
+                        .header-text {
+                            width: 25%;
+                        }
                     }
-                    &:hover{
-                        color: red
+            
+                    .center-content {
+                        width: 60%;
+                        //border: 1px solid orange;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+            
+                        .child-content {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            cursor: pointer;
+            
+                            &:hover {
+                                opacity: 0.7;
+                            }
+                        }
+            
+                        .sub-title {
+                            font-weight: 400;
+                            font-size: 12px;
+            
+            
+                        }
                     }
-            }
-            //$.active <=> language-vi active
-            .language-vi{
-                cursor: pointer;
-                margin: 0 10px;
-                opacity: 0.4;
-                &.active{
-                    color: orange;
-                    opacity: 1;
+            
+                    .right-content {
+                        width: 20%;
+                        //border: 1px solid grey;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+            
+                        .support {
+                            padding-right: 50px;
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+            
+                            i {
+                                font-size: 15px;
+                                margin-right: 5px;
+                            }
+            
+                            &:hover {
+                                color: red
+                            }
+                        }
+            
+                        //$.active <=> language-vi active
+                        .language-vi {
+                            cursor: pointer;
+                            margin: 0 10px;
+                            opacity: 0.4;
+            
+                            &.active {
+                                color: orange;
+                                opacity: 1;
+                            }
+            
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+            
+                        .language-en {
+                            cursor: pointer;
+                            margin: 0 10px;
+                            opacity: 0.4;
+            
+                            &.active {
+                                color: blue;
+                                opacity: 1;
+                            }
+            
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                    }
                 }
-                &:hover{
-                    opacity: 1;
-                }
-            }
-            .language-en {
-                cursor: pointer;
-                margin: 0 10px;
-                opacity: 0.4;
-                &.active {
-                    color: blue;
-                    opacity: 1;
-                }
-                &:hover{
-                    opacity: 1;
-                }
-            }
+            
+                .center-content {}
         }
-    }
-    .center-content {}
+  
 }
 
 .home-header-banner {
