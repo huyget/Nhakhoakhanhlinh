@@ -10,45 +10,38 @@ import specialty from "../../../assets/specialty/112457-co-xuong-khop.jpg";
 //specialty :chuyrn mon
 class Specialty extends Component {
   render() {
-    let settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-    };
     return (
-      <div className="section-specialty">
-        <div className="specialty-content">
-          <div className="specialty-header">
+      <div className="section-share section-specialty">
+        <div className="section-content">
+          <div className="section-header">
             <span>Các chuyên khoa răng hàm mặt</span>
             <button>xem thêm</button>
           </div>
-          <div className="specialty-body">
-            <Slider {...settings}>
-              <div className="img-customize">
-                <div className="img-container "></div>
-                <div className="specialty-text">Bệnh nha chu</div>
+          <div className="section-body">
+            <Slider {...this.props.settings}>
+              <div className="section-customize">
+                <div className="img-section-container img-specialty "></div>
+                <div className="section-text">Bệnh nha chu</div>
               </div>
-              <div className="img-customize">
-                <div className="img-container"></div>
-                <div className="specialty-text">Bệnh nha chu</div>
+              <div className="section-customize">
+                <div className="img-section-container img-specialty"></div>
+                <div className="section-text">Bệnh nha chu</div>
               </div>
-              <div className="img-customize">
-                <div className="img-container"></div>
-                <div className="specialty-text">Bệnh nha chu</div>
+              <div className="section-customize">
+                <div className="img-section-container img-specialty"></div>
+                <div className="section-text">Bệnh nha chu</div>
               </div>
-              <div className="img-customize">
-                <div className="img-container"></div>
-                <div className="specialty-text">Bệnh nha chu</div>
+              <div className="section-customize">
+                <div className="img-section-container img-specialty"></div>
+                <div className="section-text">Bệnh nha chu</div>
               </div>
-              <div className="img-customize">
-                <div className="img-container"></div>
-                <div className="specialty-text">Bệnh nha chu</div>
+              <div className="section-customize">
+                <div className="img-section-container img-specialty"></div>
+                <div className="section-text">Bệnh nha chu</div>
               </div>
-              <div className="img-customize">
-                <div className="img-container"></div>
-                <div className="specialty-text">Bệnh nha chu</div>
+              <div className="section-customize">
+                <div className="img-section-container img-specialty"></div>
+                <div className="section-text">Bệnh nha chu</div>
               </div>
             </Slider>
           </div>
