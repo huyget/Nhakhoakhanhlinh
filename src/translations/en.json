@@ -8,7 +8,8 @@
         "select-doctor":"Choose a good doctor",
         "fee":"Examination package",
         "check-health":"General health check",
-        "support":"Support"
+        "support":"Support",
+        "welcome": "welcome"
 
     },
     "banner":{
@@ -53,13 +54,41 @@
             "system-administrator": {
                 "header": "System Administrator",
                 "user-manage": "User manage",
-                "product-manage": "Package manage",
+                "user-redux": "Package manage",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {
                 "header": "System-parameter"
             }
-        }
+        },
+        "admin":{
+        "manage-user": "users System",
+        "manage-doctor": "Manage Doctors",
+        "manage-admin":"Manage Admins",
+        "crud":"CRUD user",
+        "crud-redux":"CRUD redux",
+        "clinic":"Clinics",
+        "manage-clinic":" Manage Clinics",
+        "specialty":"Specialtys",
+        "manage-specialty": "Manage Specialtys",
+        "handbook": "Handbook",
+        "manage-handbook": "Manage Handbooks"
+    }
+    },
+    "manage-user":{
+        "add":"Add a new user",
+        "email": "Email",
+        "password": "password",
+        "first-name":"First Name",
+        "last-name": "Lasr Name",
+        "phone-number":"Phone Number",
+        "address":"Address",
+        "gender":"Gender",
+        "position":"Position",
+        "role" :"RoleID",
+        "avatar" : "Avatar",
+        "save":"save user",
+        "upload":"upload"
     },
     "system": {
         "user-manage": {

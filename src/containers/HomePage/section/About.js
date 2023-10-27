@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 //About : ve
 class About extends Component {
   render() {
@@ -16,9 +17,9 @@ class About extends Component {
                 height="350"
                 src="https://www.youtube.com/embed/EEIQ6gl__2Q"
                 title="Phục hồi ấn tượng răng bị sâu rộng: Điều trị tủy"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullscreen
               ></iframe>
             </div>
             <div className="content-right">
